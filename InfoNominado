@@ -1,0 +1,46 @@
+class InfoNominado {
+ static String nombre;
+ static String apellido;
+ static String pelicula;
+ static String categoria;
+ static String muestra;
+}
+class ControlNominado {
+ static void recuperaNombre(String[] n) {
+   	InfoNominado.nombre = n[0];
+ }
+
+ static void recuperaApellido(String[] n){
+ 	InfoNominado.apellido = n[1];
+ }
+
+ static void recuperaPelicula(String[] n){
+ 	InfoNominado.pelicula = n[2];
+ }
+
+  static void recuperaCategoria(String[] n){
+ 	InfoNominado.categoria = n[3];
+ }
+
+ static void muestraNominado() {
+   System.out.println(InfoNominado.muestra);
+ }
+}
+public class Nominado {
+ public static void main(String[] n) {
+ 	System.out.println("Bienvenido a los Premios Oscar \n");
+ 	System.out.println("Estamos procesando su solicitud de nominacion.....");
+ 	 ControlNominado.recuperaNombre(n);
+    System.out.println("Procesando......\n"); 
+     ControlNominado.recuperaApellido(n);
+    System.out.println("Procesando......\n");
+     ControlNominado.recuperaPelicula(n); 
+    System.out.println("Procesando......\n");
+     ControlNominado.recuperaCategoria(n);  
+    System.out.println("---Congratulations---");
+    System.out.println("Se ha registrado su nominado");
+     InfoNominado.muestra = "Nombre: " + InfoNominado.nombre + "\t" + "Apellido: " + InfoNominado.apellido + "\t" 
+     + "Pelicula: " + InfoNominado.pelicula + "\t" + "Categoria: " + InfoNominado.categoria;
+   	ControlNominado.muestraNominado();
+   }
+ }
